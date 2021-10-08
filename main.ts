@@ -18,8 +18,33 @@ let mySprite = sprites.create(img`
     ..88..........88..
     ..ff..........ff..
     `, SpriteKind.Player)
+controller.moveSprite(mySprite)
+tiles.setTilemap(tilemap`level1`)
+scene.cameraFollowSprite(mySprite)
 forever(function () {
-    mySprite = sprites.create(img`
+    controller.moveSprite(mySprite)
+    mySprite.setImage(img`
+        ..................
+        ..................
+        ........ee........
+        .....e313313e.....
+        .....e333333e.....
+        .....33222233.....
+        3....32dddd23....3
+        33...33222233...33
+        .3333333333333333.
+        ..333f333333f333..
+        ..33333333333333..
+        .3333333333333333.
+        .fffffff55fffffff.
+        .8888888888888888.
+        .8888..8888..8888.
+        ..88....88....88..
+        ..88..........88..
+        ..ff..........ff..
+        `)
+    pause(500)
+    mySprite.setImage(img`
         ..................
         ..................
         ........ee........
@@ -38,25 +63,6 @@ forever(function () {
         ..88..........88..
         ..88..........88..
         ..ff..........ff..
-        `, SpriteKind.Player)
-    mySprite = sprites.create(img`
-        ..................
-        ..................
-        ........ee........
-        .....e313313e.....
-        .....e333333e.....
-        .....33222233.....
-        3....32111123....3
-        33...33222233...33
-        .3333333333333333.
-        ..333f333333f333..
-        ..33333333333333..
-        .3333333333333333.
-        .fffffff55fffffff.
-        .8888888888888888.
-        .8888..8888..8888.
-        ..88....88....88..
-        ..88..........88..
-        ..ff..........ff..
-        `, SpriteKind.Player)
+        `)
+    pause(500)
 })
